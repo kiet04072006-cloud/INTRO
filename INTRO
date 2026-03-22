@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký CTV BNS</title>
+
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff9a9e, #a18cd1, #fad0c4);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 350px;
+        }
+
+        img {
+            width: 150px;
+            margin-bottom: 15px;
+            border-radius: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .yes {
+            background: #4ecdc4;
+            color: white;
+        }
+
+        .no {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        .message {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .message a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #4ecdc4;
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Ảnh chibi -->
+    <img src="https://i.pinimg.com/736x/7d/3f/4d/7d3f4d1d9e8c4b6d7c3f7f2f2a5b8c3f.jpg" alt="chibi">
+
+    <h2>Bạn có muốn vào BNS không? 😳</h2>
+
+    <div class="btn-group">
+        <button id="yesBtn" class="yes">CÓ</button>
+        <button id="noBtn" class="no">KHÔNG</button>
+    </div>
+
+    <div class="message" id="msg">
+        <h3>Yesss 😆 Bạn đã bị dụ thành công!</h3>
+        <a href="https://forms.gle/1JgvWFK7sDd1oLkRA" target="_blank">
+            Đăng ký ngay
+        </a>
+    </div>
+
+</div>
+
+<script>
+    let count = 0;
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const msg = document.getElementById("msg");
+
+    function swap() {
+        let tempText = yesBtn.textContent;
+        let tempClass = yesBtn.className;
+
+        yesBtn.textContent = noBtn.textContent;
+        yesBtn.className = noBtn.className;
+
+        noBtn.textContent = tempText;
+        noBtn.className = tempClass;
+    }
+
+    function handleClick(e) {
+        if (e.target.textContent === "CÓ") {
+            count++;
+            swap();
+
+            if (count >= 5) {
+                document.querySelector(".btn-group").style.display = "none";
+                msg.style.display = "block";
+            }
+        } else {
+            alert("Không thoát được đâu 😏");
+        }
+    }
+
+    yesBtn.addEventListener("click", handleClick);
+    noBtn.addEventListener("click", handleClick);
+</script>
+
+</body>
+</html>
