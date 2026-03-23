@@ -10,7 +10,7 @@
         body {
             background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
             background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
+            animation: gradientBG 2s ease infinite;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,18 +19,18 @@
         }
 
         @keyframes gradientBG {
-            0% { background-position: 0% 60%; }
-            50% { background-position: 40% 60%; }
-            100% { background-position: 50% 100%; }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .container {
             background: white; 
-            padding: 25px; 
+            padding: 40px; 
             border-radius: 20px; 
             text-align: center; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
-            width: 400px;
+            width: 600px;
         }
         img {
             width: 220px;
