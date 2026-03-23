@@ -10,7 +10,7 @@
         body {
             background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
             background-size: 400% 400%;
-            animation: gradientBG 2s ease infinite;
+            animation: gradientBG 10s ease infinite;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,12 +18,14 @@
             font-family: Arial;
         }
 
+        
         @keyframes gradientBG {
             0% { background-position: 0% 70%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 70%; }
         }
 
+        
         .container {
             background: white; 
             padding: 40px; 
